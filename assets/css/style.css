@@ -1,0 +1,21 @@
+h1{
+    text-align: center;
+    background-image: url("../../assets/img/naturalblack.png");
+    color: white;
+    
+}
+
+p{
+
+    text-align: center;
+    color:#612E83;
+}
+
+.jumbotron, .panel-heading, .subheader{
+    background-image: url("../../assets/img/naturalblack.png");
+    color: white;
+
+}
+
+body{
+    background-image: url("../../assets/img/naturalblack.png")}

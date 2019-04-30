@@ -11,22 +11,26 @@
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-    <title>Train Schedule</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <title>Spaceship Schedule</title>
 </head>
 
 <body>
     <div class="container" id="container-form">
         <div class="jumbotron">
-            <h1>Train</h1>
-            <p>idk</p>
+            <h1>Spaceship Schedule</h1>
+            
+            <p>Traveling one lightyear at a time</p>
         </div>
         <div class="panel panel-default">
             <table class="table">
                 <thead class="thead-dark">
-                    <div class="panel-heading">Current Train Schedule</div>
+                    <div class="panel-heading">
+                       <p class ="subheader">Current Spaceship Schedule</p>
+                    </div>
 
                     <tr>
-                        <th class="name">Train Name</th>
+                        <th class="name">Spaceship Name</th>
                         <th class="destination">Destination</th>
                         <th>Frequency(min)</th>
                         <th>Next Arrival</th>
@@ -40,19 +44,21 @@
 
         </div>
         <div class="panel panel-default" >
-            <div class="panel-heading">Add Train</div>
+            <div class="panel-heading">
+                <p class ="subheader">Add Spaceship</p>
+            </div>
             <form>
                 <div class="form-group">
-                    <label for="train-name">Train Name</label>
-                    <input type="train" class="form-control" id="train-name">
+                    <label for="spaceship-name">Spaceship Name</label>
+                    <input type="spaceship" class="form-control" id="spaceship-name">
                 </div>
                 <div class="form-group">
                     <label for="destination">Destination</label>
                     <input type="destination" class="form-control" id="destination">
                 </div>
                 <div class="form-group">
-                    <label for="first-train-time">First Train Time(HH:mm-military time)</label>
-                    <input type="first-train" class="form-control" id="first-train-time">
+                    <label for="first-spaceship-time">First Spaceship Time(HH:mm-military time)</label>
+                    <input type="first-spaceship" class="form-control" id="first-spaceship-time">
                 </div>
                 <div class="form-group">
                     <label for="frequency">Frequency(min)</label>

@@ -1,6 +1,6 @@
-var trainName = "";
+var spaceshipName = "";
 var destination = "";
-var firstTrain;
+var firstSpaceship;
 var frequency;
 var nextArrival;
 var minutesAway;
@@ -24,9 +24,9 @@ $("#submit-btn").on("click", function (event) {
     event.preventDefault();
 
 
-    trainName = $("#train-name").val().trim();
+    spaceshipName = $("#spaceship-name").val().trim();
     destination = $("#destination").val().trim();
-    firstTrain = $("#first-train-time").val().trim();
+    firstSpaceship = $("#first-spaceship-time").val().trim();
     frequency = $("#frequency").val().trim();
     // startDate =$("#start-date").val().trim();
     // monthlyRate = $("#monthly-rate").val().trim();
@@ -35,9 +35,9 @@ $("#submit-btn").on("click", function (event) {
 
 
     database.ref().push({
-        trainName: trainName,
+        spaceshipName: spaceshipName,
         destination: destination,
-        firstTrain: firstTrain,
+        firstSpaceship: firstSpaceship,
         frequency: frequency
 
     })
@@ -48,31 +48,30 @@ $("#submit-btn").on("click", function (event) {
 database.ref().on("child_added", function (snapshot) {
     var sv = snapshot.val();
 
-    var trainRow = $("<tr>");
+    var spaceshipRow = $("<tr>");
     var nameTd = $("<td>");
     var destinationTd = $("<td>");
     var frequencyTd = $("<td>");
     var nextArrivalTd = $("<td>");
     var minutesTd = $("<td>");
 
-    nameTd.text(sv.trainName)
+    nameTd.text(sv.spaceshipName)
     destinationTd.text(sv.destination)
     frequencyTd.text(sv.frequency)
-    nextArrivalTd.text(sv.firstTrain)
+    nextArrivalTd.text(sv.firstSpaceship)
 
 
 
-    trainRow.append(nameTd)
-    trainRow.append(destinationTd)
-    trainRow.append(frequencyTd)
-    trainRow.append(nextArrivalTd)
+    spaceshipRow.append(nameTd)
+    spaceshipRow.append(destinationTd)
+    spaceshipRow.append(frequencyTd)
+    spaceshipRow.append(nextArrivalTd)
 
 
     // got code snippet from train example
-    var firstTrainConverted = moment(sv.firstTrain, "HH:mm").subtract(1, "years");
-    console.log(firstTrainConverted)
+    var firstSpaceshipConverted = moment(sv.firstSpaceship, "HH:mm").subtract(1, "years");
     var now = moment()
-    var minuteDiff = now.diff(moment(firstTrainConverted), "minutes");
+    var minuteDiff = now.diff(moment(firstSpaceshipConverted), "minutes");
     console.log(minuteDiff)
     var remainder = minuteDiff % sv.frequency;
     console.log(remainder)
@@ -82,20 +81,20 @@ database.ref().on("child_added", function (snapshot) {
 
 
     nextArrivalTd.text(nextArrival)
-    trainRow.append(nextArrivalTd)
+    spaceshipRow.append(nextArrivalTd)
 
     minutesTd.text(minutesRemaining)
-    trainRow.append(minutesTd)
+    spaceshipRow.append(minutesTd)
     console.log(minutesRemaining)
 
 
 
-    $(".tbody").append(trainRow)
+    $(".tbody").append(spaceshipRow)
 
 
-    $("#train-name").val("")
+    $("#spaceship-name").val("")
     $("#destination").val("")
-    $("#first-train-time").val("")
+    $("#first-spaceship-time").val("")
     $("#frequency").val("");
 
 
