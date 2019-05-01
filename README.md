@@ -1,2 +1,2 @@
 # Train-Schedule
-Provides information on train schedules such as what time is the next train, the frequency of the train, and minutes until next train. Admins can add trains to the schedule.
+Provides information on spaceship schedules such as what time is the next spaceship , the frequency of the spaceship , and minutes until next spaceship . Admins can add spaceships to the schedule.
